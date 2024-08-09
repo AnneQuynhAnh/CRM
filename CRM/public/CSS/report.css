@@ -1,0 +1,170 @@
+body {
+  font-family: url(Assets/font/MINIONPRO-BOLD.OTF);
+  background-color: #2a2020;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("../Assets/images/Wavyline.png");
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 1%;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  color: #fef2f2;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.sidebar-item {
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 5px 5px 5px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.sidebar-box-title {
+  font-size: 20px;
+  background-color: #df2524;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: -5px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.main-content {
+  flex: 1;
+  padding: 10px;
+  padding-right: 80px;
+  position: relative;
+}
+
+.main-content canvas {
+  max-width: 100%;
+  max-height: 70%;
+  margin-top: 120px; /* Move the chart down */
+}
+
+.bottom-bar {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #ec1c25;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-text {
+  font-size: 24px;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.bottom-bar button {
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.bottom-bar button:hover {
+  background-color: #ff8d8d;
+}
+
+.arrow-button {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background-color: #fff; /* Maintain the button color */
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #000; /* Text color */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Box shadow to match other buttons */
+}
+
+.arrow-button:hover {
+  background-color: #ff8d8d; /* Maintain the hover color */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .main-content {
+    padding: 10px;
+    padding-right: 40px; /* Adjust padding for smaller screens */
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .bottom-bar button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 5px;
+    padding-right: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .bottom-bar {
+    padding: 5px;
+  }
+
+  .bottom-bar button {
+    padding: 5px 10px;
+  }
+}

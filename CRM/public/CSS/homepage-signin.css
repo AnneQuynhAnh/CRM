@@ -1,0 +1,377 @@
+:root {
+  --primary-red: #e63946;
+  --dark-red: #9d0208;
+  --white: #f1faee;
+  --light-gray: #a8dadc;
+  --medium-gray: #457b9d;
+  --dark-gray: #1d3557;
+  --black: #000000;
+}
+
+body {
+  font-family: url(Assets/font/MINIONPRO-BOLD.OTF);
+  background-color: #2a2020;
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url("../Assets/images/Wavyline.png");
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px; /* Set a fixed height */
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 0;
+  padding: 20px; /* Ensure consistent padding */
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: var(--primary-red);
+  text-align: center; /* Center the text */
+  margin: 70px 0 20px 0; /* Adjust margin as needed */
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--primary-red);
+  color: var(--white);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--dark-red);
+}
+
+a {
+  color: var(--light-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-red);
+}
+
+p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Red line art background */
+.line-art {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.line {
+  position: absolute;
+  background-color: rgba(230, 57, 70, 0.1);
+}
+
+.line-1 {
+  width: 2px;
+  height: 100%;
+  left: 20%;
+  transform: skew(-20deg);
+}
+
+.line-2 {
+  width: 100%;
+  height: 2px;
+  top: 30%;
+  transform: skew(-20deg);
+}
+
+.line-3 {
+  width: 2px;
+  height: 100%;
+  right: 10%;
+  transform: skew(20deg);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.welcome-section {
+  text-align: left;
+  position: absolute;
+  top: 200px; /* Adjust this value to move it lower */
+  left: 60px; /* Adjust this value to set distance from the left edge */
+}
+
+.welcome-section h1 {
+  font-size: 3rem; /* Increase font size for larger text */
+  margin-bottom: 30px; /* Adjust margin as needed */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px; /* Adjust margin as needed */
+  margin-left: 100px; /* Align with welcome text */
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  position: absolute;
+  left: 30px; /* Adjust this value to set distance from the left edge */
+}
+
+.transparent-divider {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%; /* Ensure it spans the full width */
+  height: 30%; /* Adjust the height as needed */
+  position: absolute;
+  bottom: 0%; /* Adjust this value to move it lower */
+  left: 0; /* Align it to the left */
+  backdrop-filter: blur(5px);
+  box-sizing: border-box; /* Ensure padding is included in the width and height */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px; /* Adjust this value to move buttons lower */
+}
+
+.button-wrapper {
+  margin: 10px;
+}
+
+.action-button {
+  background-color: var(--primary-red); /* Initial button color */
+  border: none;
+  border-radius: 50%; /* Make the button round */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button:hover {
+  background-color: var(--dark-red); /* Change color on hover to darker red */
+  transform: scale(1.1);
+}
+
+.button-image {
+  border-radius: 0%;
+  width: 50px; /* Adjust size to fit within button */
+  height: 50px; /* Adjust size to fit within button */
+  object-fit: cover;
+  transition: none; /* Prevent images from fading */
+}
+
+.button-text {
+  color: var(--white);
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Responsive design for home page */
+@media (max-width: 768px) {
+  .transparent-divider {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .button-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .button-text {
+    font-size: 0.9rem;
+  }
+}
+/* Add these styles at the end of your CSS file */
+
+/* Add these styles at the end of your CSS file */
+
+/* Popup container */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add these styles at the end of your CSS file */
+
+/* Popup container */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup content */
+.popup-content {
+  background-color: #fff; /* Set background color to white */
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 600px;
+  text-align: center;
+  border-radius: 10px;
+  color: #000; /* Set text color to black */
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the container when popup is active */
+body.popup-active .container {
+  display: none;
+}
+
+/* Button styles inside popup */
+.popup-content button {
+  background-color: var(--primary-red);
+  color: var(--white);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px 5px;
+}
+
+.popup-content button:hover {
+  background-color: var(--dark-red);
+}
+
+.sign-out-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: #df2524;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sign-out-button:hover {
+  background-color: #c91f1f;
+}

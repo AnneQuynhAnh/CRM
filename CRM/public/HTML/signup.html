@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../CSS/homepage-signin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - VINA Design</title>
+  </head>
+  <body>
+    <div class="container" id="signupContainer">
+      <img
+        src="../Assets/images/logo.png"
+        alt="VINA Design Logo"
+        class="logo"
+      />
+      <h1>Sign Up</h1>
+
+      <div class="shape circle"></div>
+      <div class="shape square"></div>
+
+      <form id="signupForm" action="/signup" method="post">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required /><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        /><br /><br />
+
+        <button type="submit">Next</button>
+      </form>
+
+      <p><a href="../HTML/signin.html">Back to Sign In</a></p>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="emailConfirmationPopup" class="popup hidden">
+      <div class="popup-content">
+        <span class="close" id="closePopup">&times;</span>
+        <h2>Please Confirm Your Email</h2>
+        <p>
+          A confirmation link has been sent to your email address. Please check
+          your inbox and click on the link to activate your account.
+        </p>
+        <button id="confirmButton">Confirm</button>
+        <a href="https://mail.google.com" target="_blank">
+          <button>Go to Gmail</button>
+        </a>
+      </div>
+    </div>
+
+    <script src="../JavaScript/signup.js"></script>
+  </body>
+</html>

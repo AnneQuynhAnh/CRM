@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo Đơn Hàng</title>
+    <link rel="stylesheet" href="../CSS/create-order.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="container">
+      <div class="left-half">
+        <input type="text" id="searchBar" placeholder="Tìm sản phẩm..." />
+        <div id="suggestions"></div>
+        <div id="productDetails" class="hidden">
+          <div class="modal-content">
+            <div class="print-icon left-align" id="printIcon">
+              <img
+                src="../Assets/images/printericons-02.png"
+                alt="Print Icon"
+                class="print-icon-img"
+              />
+            </div>
+            <span id="productName" class="title">Hiflex 3.2 dzem</span>
+            <div class="specs">
+              <label for="specifications">Quy Cách:</label>
+              <select id="specifications">
+                <option value="Chừa Biên">Chừa Biên</option>
+                <option value="Đóng Khoen">Đóng Khoen</option>
+                <option value="Dán Nối , Chừa Biên">Dán Nối , Chừa Biên</option>
+                <option value="Dán nối , đóng khoen">
+                  Dán nối , đóng khoen
+                </option>
+              </select>
+              <div class="row">
+                <div class="input-group">
+                  <label for="length">Chiều dài:</label>
+                  <input type="number" id="length" min="0" step="0.01" />
+                </div>
+                <div class="input-group">
+                  <label for="width">Chiều rộng:</label>
+                  <input type="number" id="width" min="0" step="0.01" />
+                </div>
+              </div>
+              <div class="result-row">
+                Tổng diện tích: <span id="totalSize">0.00</span> m²
+              </div>
+              <div class="row">
+                <div class="result-group">
+                  Giá mỗi m²: <span id="pricePerM2">50</span> VND
+                </div>
+                <div class="result-group">
+                  Vật tư dư: <span id="leftMaterial">0.00</span> VND
+                </div>
+              </div>
+              <div class="row">
+                <div class="result-group">
+                  Giá in: <span id="printingMoney">0.00</span> VND
+                </div>
+                <div class="result-group">
+                  Giá mỗi đơn vị: <span id="perPieceMoney">0.00</span> VND
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="quantity">Số lượng:</label>
+                <input type="number" id="quantity" min="1" value="1" />
+              </div>
+              <div class="result-row total-money-row">
+                Tổng tiền: <span id="totalMoney">0.00</span> VND
+              </div>
+              <div class="input-group">
+                <label for="note">Ghi chú:</label>
+                <textarea
+                  id="note"
+                  rows="4"
+                  placeholder="Thêm ghi chú..."
+                ></textarea>
+              </div>
+              <button id="addToCartButton" class="button-common">
+                Thêm vào giỏ hàng
+              </button>
+              <div id="cartIcon" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-bar"></div>
+        <div id="addProductButton" class="add-product-button">
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+
+      <div class="right-half">
+        <img src="../Assets/images/logo.png" alt="Logo" class="logo" />
+        <div class="content">
+          <div class="billing-section">
+            <div class="column">
+              <p>Số đơn hàng: <input type="text" id="orderNo" /></p>
+              <p>Tên nhân viên: <input type="text" id="staffName" /></p>
+              <p>Thiết kế: <input type="text" id="designer" /></p>
+              <p>
+                Tên khách hàng: <input type="text" id="billingCustomerName" />
+              </p>
+              <p>Số điện thoại: <input type="text" id="phoneNo" /></p>
+              <p>Thanh toán:</p>
+              <input
+                type="radio"
+                id="paymentCash"
+                name="payment"
+                value="cash"
+              />
+              <label for="paymentCash">Tiền mặt</label>
+              <input
+                type="radio"
+                id="paymentTransaction"
+                name="payment"
+                value="transaction"
+              />
+              <label for="paymentTransaction">Chuyển khoản</label>
+
+              <div id="cashDetails" class="hidden">
+                <p>
+                  Người nhận tiền: <input type="text" id="personReceiveCash" />
+                </p>
+                <p>Thời gian: <input type="text" id="timeReceiveCash" /></p>
+                <p>
+                  Tiền đặt cọc: <input type="number" id="depositedAmountCash" />
+                </p>
+                <p>Còn nợ: <input type="number" id="debtAmountCash" /></p>
+              </div>
+
+              <div id="transactionDetails" class="hidden">
+                <p>
+                  Tên ngân hàng: <input type="text" id="bankNameTransaction" />
+                </p>
+                <p>Thời gian: <input type="text" id="timeTransaction" /></p>
+                <p>
+                  Tiền đặt cọc:
+                  <input type="number" id="depositedAmountTransaction" />
+                </p>
+                <p>
+                  Còn nợ: <input type="number" id="debtAmountTransaction" />
+                </p>
+              </div>
+
+              <p>Phương thức giao hàng:</p>
+              <input
+                type="radio"
+                id="deliveryPickup"
+                name="delivery"
+                value="pickup"
+              />
+              <label for="deliveryPickup">Khách tự đến lấy</label>
+              <input
+                type="radio"
+                id="deliveryDelivery"
+                name="delivery"
+                value="delivery"
+              />
+              <label for="deliveryDelivery">Giao hàng</label>
+
+              <div id="pickupDetails" class="hidden">
+                <p>Vui lòng đến 365 Lê Quang Định P5 BT HCM để nhận hàng</p>
+              </div>
+
+              <div id="deliveryDetails" class="hidden">
+                <p>
+                  Công ty giao hàng: <input type="text" id="deliveryCompany" />
+                </p>
+                <p>Phí giao hàng: <input type="number" id="deliveryFee" /></p>
+              </div>
+            </div>
+
+            <div class="column">
+              <p>
+                <img
+                  src="../Assets/images/QR invoice.png"
+                  alt="QR Code"
+                  class="qr-code"
+                />
+              </p>
+              <p>Chi tiết hóa đơn VAT</p>
+              <div id="finalProductDetails"></div>
+              <p>Ghi chú: <input type="text" id="noteDetails" /></p>
+              <p>Ngày nhận: <input type="text" id="receivedDay" /></p>
+              <p>Giảm giá: <input type="number" id="discount" value="0" /></p>
+              <p>Số tiền khách cần trả: <span id="amountToPay">0</span> VND</p>
+            </div>
+          </div>
+        </div>
+        <button id="next-billing" class="button-common">Tiếp</button>
+      </div>
+      <div id="cartPopup" class="cart-popup hidden printable">
+        <div class="cart-popup-content">
+          <button id="closeCartButton" class="button-common close-button">
+            ✕
+          </button>
+          <h3>Giỏ hàng</h3>
+          <ul id="cartItems"></ul>
+          <div class="button-group">
+            <button id="addToCartButtonPopup" class="button-common">
+              Thêm
+            </button>
+            <button id="nextButton" class="button-common">Tiếp</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="finalizationDiv" class="hidden finalization">
+        <h3>Phiếu In</h3>
+        <div id="finalCustomerDetails"></div>
+        <div id="finalCartItems"></div>
+        <button id="closeFinalizationButton" class="button-common">Đóng</button>
+      </div>
+      <div class="footer">
+        <div class="text">TRẠNG THÁI ĐƠN HÀNG</div>
+        <div class="buttons">
+          <button id="DangThucHienButton">Đang Thực Hiện</button>
+          <button id="HoanTatButton">Hoàn Tất</button>
+          <button id="BiHuyButton">Bi Huỷ</button>
+        </div>
+      </div>
+      <script src="../JavaScript/create-order.js"></script>
+      <script src="../JavaScript/navbar.js"></script>
+    </div>
+
+    <div id="finalizationPopup" class="finalization-popup hidden">
+      <div class="finalization-popup-content">
+        <button
+          id="closeFinalizationPopupButton"
+          class="button-common close-button"
+        >
+          ✕
+        </button>
+        <div id="finalizationPopupContent"></div>
+      </div>
+    </div>
+  </body>
+</html>

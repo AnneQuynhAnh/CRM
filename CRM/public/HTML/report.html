@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo Cáo Thu Nhập</title>
+    <link rel="stylesheet" href="../CSS/report.css" />
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="container">
+      <div class="sidebar">
+        <h2 class="sidebar-title">Tổng Kết</h2>
+        <div class="sidebar-item">
+          <div class="sidebar-box-title">Tổng Thu Nhập</div>
+          <p><span id="totalIncome">0</span></p>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-box-title">Đã Thu</div>
+          <p><span id="deposited">0</span></p>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-box-title">Còn Nợ</div>
+          <p><span id="debt">0</span></p>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-box-title">Đơn Hoàn Tất</div>
+          <p><span id="completedOrder">0</span></p>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-box-title">Đơn Đang Tiến Hành</div>
+          <p><span id="processingOrder">0</span></p>
+        </div>
+        <div class="sidebar-item">
+          <div class="sidebar-box-title">Đơn Bị Huỷ</div>
+          <p><span id="cancelledOrder">0</span></p>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <canvas id="incomeChart"></canvas>
+        <button class="arrow-button" data-state="weeks1and2">Tuần3,4 ></button>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      <div class="status-container">
+        <span class="status-text">Dạng Báo Cáo</span>
+        <button onclick="updateReport('day')">Ngày</button>
+        <button onclick="updateReport('month')">Tháng</button>
+        <button onclick="updateReport('year')">Năm</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JavaScript/report.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+  </body>
+</html>

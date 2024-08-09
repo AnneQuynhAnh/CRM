@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../CSS/homepage-signin.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - VINA Design</title>
+  </head>
+  <body>
+    <header id="navbar-placeholder"></header>
+    <div class="line-art">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+    <main>
+      <div class="welcome-section">
+        <h1>Chào Mừng!</h1>
+        <div class="user-info">
+          <img
+            src="../Assets/images/profile.png"
+            alt="Profile Picture"
+            class="profile-picture"
+          />
+          <h2>User Name</h2>
+        </div>
+      </div>
+      <div class="transparent-divider">
+        <div class="button-container">
+          <div class="button-wrapper">
+            <button class="action-button" onclick="location.href='report.html'">
+              <img
+                src="../Assets/images/form.png"
+                alt="Report"
+                class="button-image"
+              />
+            </button>
+            <p class="button-text">Báo Cáo</p>
+          </div>
+          <div class="button-wrapper">
+            <button
+              class="action-button"
+              onclick="location.href='create-order.html'"
+            >
+              <img
+                src="../Assets/images/plus.png"
+                alt="New Order"
+                class="button-image"
+              />
+            </button>
+            <p class="button-text">Tạo Đơn</p>
+          </div>
+          <div class="button-wrapper">
+            <button class="action-button" onclick="location.href='search.html'">
+              <img
+                src="../Assets/images/search.png"
+                alt="Search"
+                class="button-image"
+              />
+            </button>
+            <p class="button-text">Tìm Kiếm</p>
+          </div>
+          <div class="button-wrapper">
+            <button
+              class="action-button"
+              onclick="location.href='checkprice.html'"
+            >
+              <img
+                src="../Assets/images/check.png"
+                alt="Check Price"
+                class="button-image"
+              />
+            </button>
+            <p class="button-text">Kiểm giá</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <button class="sign-out-button" onclick="location.href='signin.html'">
+      ĐĂNG XUẤT
+    </button>
+    <script src="../JavaScript/home.js"></script>
+  </body>
+</html>

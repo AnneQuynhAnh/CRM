@@ -1,0 +1,581 @@
+body,
+html {
+  font-family: url(Assets/font/MINIONPRO-BOLD.OTF);
+  background-color: #2a2020;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center the content vertically */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url("../Assets/images/Wavyline.png");
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  background-color: #2a2020;
+  width: 90%;
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-half,
+.right-half {
+  width: 50%;
+  padding: 20px;
+}
+
+.left-half {
+  border-right: 2px solid #ccc;
+  position: relative;
+}
+
+.right-half {
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+#searchBar {
+  width: 98%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#suggestions {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+}
+
+#suggestions div {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#suggestions div:hover {
+  background-color: #eee;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: #df2524;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.specs label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.specs input,
+.specs select,
+.specs textarea {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.specs input:focus,
+.specs select:focus,
+.specs textarea:focus {
+  outline: none;
+  border-color: #df2524;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.input-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group:last-child {
+  margin-right: 0;
+}
+
+.result-row,
+.result-group {
+  flex: 1;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.row.total-money-row {
+  justify-content: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#addToCartButton,
+#addToCartButtonPopup,
+#nextButton,
+#closeFinalizationButton {
+  width: 200px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background-color: #df2524;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto; /* Center the button horizontally within its container */
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-bottom: 3px;
+}
+
+#addToCartButton:hover,
+#addToCartButtonPopup:hover,
+#nextButton:hover,
+#closeFinalizationButton:hover {
+  background-color: #c91f1f;
+}
+
+#note {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+.print-icon {
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+.print-icon.left-align {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.print-icon.right-align {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.print-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.bottom-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e85654;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.add-product-button {
+  position: absolute;
+  right: 20px;
+  bottom: 40px; /* Adjusted to be above the bottom bar */
+  cursor: pointer;
+  background-color: #df2524;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.add-product-button i {
+  font-size: 20px;
+}
+
+.cart-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  background-color: #df2524;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-icon i {
+  font-size: 20px;
+}
+
+.billing-section {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.column {
+  width: 48%;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.column p {
+  margin: 10px 0;
+}
+
+.column input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#cashDetails,
+#transactionDetails,
+#pickupDetails,
+#deliveryDetails {
+  margin-top: 10px;
+}
+
+#cartPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.cart-popup-content h3 {
+  margin-top: 0;
+}
+
+#cartItems {
+  list-style: none;
+  padding: 0;
+}
+
+#cartItems li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: #df2524;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center; /* Ensure buttons are vertically aligned */
+}
+
+#next-billing {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.finalization {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.qr-code {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+}
+
+.logo {
+  width: 150px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .finalization,
+  .finalization * {
+    visibility: visible;
+  }
+}
+
+.button-common:hover {
+  background-color: #c91f1f; /* Darker red on hover */
+}
+/* Common button styles */
+/* Common button styles */
+.button-common {
+  width: 100px; /* Set a common width for all buttons */
+  height: 40px; /* Set a common height for all buttons */
+  background-color: #df2524; /* Red color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; /* Adjust the font size as needed */
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
+}
+
+.button-common:hover {
+  background-color: #c91f1f; /* Darker red on hover */
+}
+
+/* Close button specific styles */
+.close-button {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  background-color: transparent; /* Remove background color */
+  color: #000; /* Black color for the "x" */
+  font-size: 24px; /* Size of the "x" */
+  line-height: 1; /* Adjust line height */
+  padding: 0;
+  border-radius: 50%; /* Make it circular if needed */
+}
+
+.close-button:hover {
+  background-color: #f5f5f5; /* Light background on hover */
+}
+
+.cart-popup-content {
+  position: relative;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center; /* Ensure buttons are vertically aligned */
+}
+.footer {
+  background-color: #333;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 1px solid black;
+  position: fixed; /* or absolute */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer .text {
+  font-size: 16px;
+  margin-right: 20px;
+  color: white;
+}
+
+.footer .buttons {
+  margin-left: 60px;
+  display: flex;
+  gap: 30px;
+}
+
+.footer .buttons button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.footer .buttons button:hover {
+  opacity: 0.8;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-yellow-orange {
+  background: linear-gradient(270deg, yellow, orange);
+  background-size: 400% 400%;
+  animation: gradient-animation 3s ease infinite;
+  color: white;
+}
+
+.animate-gradient-green-yellow {
+  background: linear-gradient(270deg, green, yellow);
+  background-size: 400% 400%;
+  animation: gradient-animation 3s ease infinite;
+  color: white;
+}
+
+.animate-gradient-red-pink {
+  background: linear-gradient(270deg, red, pink);
+  background-size: 400% 400%;
+  animation: gradient-animation 3s ease infinite;
+  color: white;
+}
+
+/* Optional: Adjusting the content area to avoid overlap */
+.content {
+  padding-bottom: 60px; /* Adjust based on footer height */
+  box-sizing: border-box;
+}
+
+/* Remove button styling */
+.remove-from-cart {
+  background-color: #ccc;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.remove-from-cart i {
+  color: #000;
+}
+
+.finalization-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 80%; /* Adjust as needed */
+  height: 80%; /* Adjust as needed */
+  overflow: auto;
+}
+
+.finalization-popup-content {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Ensure content is centered */
+  position: relative; /* To position the close button */
+}
+.finalization-popup-content .right-half {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: #000;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #f5f5f5;
+}

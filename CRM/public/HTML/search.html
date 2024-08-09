@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order History</title>
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../CSS/search.css" />
+</head>
+<body>
+    <header id="navbar-placeholder"></header>
+    <div class="line-art">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Tìm Kiếm Sản Phẩm" />
+        <span class="search-icon">🔍</span>
+        <span class="cross-icon" style="display: none;">❌</span>
+    </div>
+
+    <div class="container">
+        <div class="order">
+            <div class="section code">
+                <p>#1234</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: John Doe PHONE: 123-456-7890</p>
+                    <p>PRICE: $100.00</p>
+                    <p>DEVICE: Laptop</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $100.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+        <!-- Duplicated orders start here -->
+        <div class="order">
+            <div class="section code">
+                <p>#1235</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: Jane Doe PHONE: 123-456-7891</p>
+                    <p>PRICE: $150.00</p>
+                    <p>DEVICE: Tablet</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $150.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+        <div class="order">
+            <div class="section code">
+                <p>#1236</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: Bob Smith PHONE: 123-456-7892</p>
+                    <p>PRICE: $200.00</p>
+                    <p>DEVICE: Smartphone</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $200.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+        <div class="order">
+            <div class="section code">
+                <p>#1237</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: Alice Johnson PHONE: 123-456-7893</p>
+                    <p>PRICE: $250.00</p>
+                    <p>DEVICE: Desktop</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $250.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+        <div class="order">
+            <div class="section code">
+                <p>#1238</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: Charlie Brown PHONE: 123-456-7894</p>
+                    <p>PRICE: $300.00</p>
+                    <p>DEVICE: Monitor</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $300.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+        <div class="order">
+            <div class="section code">
+                <p>#1239</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: David Williams PHONE: 123-456-7895</p>
+                    <p>PRICE: $350.00</p>
+                    <p>DEVICE: Printer</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $350.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+        <div class="order">
+            <div class="section code">
+                <p>#1240</p>
+            </div>
+            <div class="section info">
+                <div class="column">
+                    <p>NAME: Emma Stone PHONE: 123-456-7896</p>
+                    <p>PRICE: $400.00</p>
+                    <p>DEVICE: Scanner</p>
+                </div>
+            </div>
+            <div class="section charged">
+                <p>Charged: $400.00</p>
+            </div>
+            <div class="section actions">
+                <div class="result">
+                    <p>Hoàn Tất</p>
+                </div>
+                <img src="../Assets/images/printericons-02.png" alt="Print Icon" class="printbtn" />
+            </div>
+        </div>
+      
+    </div>
+
+    <script src="../JavaScript/search.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+</body>
+</html>
+
+
